@@ -1,0 +1,23 @@
+﻿# Ignorer les fichiers et dossiers générés par Visual Studio
+.vs/
+*.vs/
+*.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignorer les fichiers temporaires de build
+bin/
+obj/
+
+# Ignorer les fichiers de logs
+*.log
+
+# Ignorer les caches de NuGet
+.nuget/
+packages/
+
+# Ignorer les fichiers de configuration des dépendances
+project.lock.json
+project.fragment.lock.json

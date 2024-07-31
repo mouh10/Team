@@ -1,0 +1,30 @@
+﻿<Page x:Class="WPFModernVerticalMenu.Pages.Dashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFModernVerticalMenu.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Dashboard">
+
+    <Grid x:Name="Liste" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="793*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="3,7,0,0" TextWrapping="Wrap" Text="LISTE DES PRODUITS" VerticalAlignment="Top" Foreground="White" FontSize="36" FontWeight="Bold" Grid.Column="1"/>
+        <DataGrid x:Name="DataGride" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,63,0,0" 
+                  SelectionChanged="DataGride_SelectionChanged" AutoGenerateColumns="False" FontFamily="Times New Roman" FontSize="16">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Nom" Width="200" Binding="{Binding Nom}" />
+                <DataGridTextColumn Header="Description" Width="536" Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Prix" Binding="{Binding Prix}" />
+                <DataGridTextColumn Header="Quantite" Binding="{Binding Quantite}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Supprimer" Grid.Column="1" Content="SUPPRIMER" HorizontalAlignment="Left" Margin="731,10,0,0" VerticalAlignment="Top" Height="41" Width="158" FontFamily="Times New Roman" FontSize="18" Click="Supprimer_Click"/>
+        <Button x:Name="Modifier" Grid.Column="1" Content="MODIFIER" HorizontalAlignment="Left" Height="41" Margin="545,10,0,0" VerticalAlignment="Top" Width="158" FontFamily="Times New Roman" FontSize="18" Click="Modifier_Click"/>
+    </Grid>
+</Page>
